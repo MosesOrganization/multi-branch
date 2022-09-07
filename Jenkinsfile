@@ -30,5 +30,15 @@ pipeline{
 			  echo "webhook fix"
 			  }
 			}
+			stage('2 parallel'){
+				parallel{
+					stage('to-test-multi-build'){
+						steps{
+							sh 'lscpu'
+						}
+					}
+				}
+			}
 	}
 }
+
